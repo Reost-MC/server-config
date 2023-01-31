@@ -12,6 +12,7 @@ services:
       MEMORY: "2G"
       VERSION: "1.19.2"
       MOTD: "Reost Spawn"
+      MAX_PLAYERS: "64"
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -28,6 +29,7 @@ services:
       MEMORY: "8G"
       VERSION: "1.19.2"
       MOTD: "Reost"
+      MAX_PLAYERS: "1024"
     tty: true
     stdin_open: true
     restart: unless-stopped
