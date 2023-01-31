@@ -37,8 +37,8 @@ services:
       BUNGEE_JAR_REVISION: "1"
       CFG_MOTD: "Reost"
       REPLACE_ENV_VARIABLES: "true"
-      TYPE: "BUNGEECORD"
-      MEMORY: "2G"
+      TYPE: "WATERFALL"
+      MEMORY: "4G"
     tty: true
     stdin_open: true
     restart: unless-stopped
