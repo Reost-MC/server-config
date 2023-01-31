@@ -1,0 +1,50 @@
+version: '3.5'
+
+services:
+  spawn:
+    image: itzg/minecraft-server
+    ports:
+      - 25566:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      ONLINE_MODE: "FALSE"
+      MEMORY: "2G"
+      VERSION: "1.19.2"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - /home/docker-minecraft/spawn:/data
+  reost:
+    image: itzg/minecraft-server
+    ports:
+      - 25566:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      ONLINE_MODE: "FALSE"
+      MEMORY: "8G"
+      VERSION: "1.19.2"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - /home/docker-minecraft/reost:/data
+  proxy:
+    image: itzg/bungeecord
+    environment:
+      BUNGEE_JAR_REVISION: "1"
+      CFG_MOTD: "Reost"
+      REPLACE_ENV_VARIABLES: "true"
+      TYPE: "BUNGEECORD"
+      MEMORY: "2G"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25577"
+    volumes:
+      - /home/docker-minecraft/proxy/_config:/config
+      - /home/docker-minecraft/proxy/_plugins:/plugins
+      - /home/docker-minecraft/proxy:/server
