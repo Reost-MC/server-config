@@ -4,13 +4,14 @@ services:
   spawn:
     image: itzg/minecraft-server
     ports:
-      - 25566:25565
+      - 25571:25565
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       MEMORY: "2G"
       VERSION: "1.19.2"
+      MOTD: "Reost Spawn"
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -19,13 +20,14 @@ services:
   reost:
     image: itzg/minecraft-server
     ports:
-      - 25567:25565
+      - 25572:25565
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       MEMORY: "8G"
       VERSION: "1.19.2"
+      MOTD: "Reost"
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -39,6 +41,7 @@ services:
       REPLACE_ENV_VARIABLES: "true"
       TYPE: "WATERFALL"
       MEMORY: "4G"
+      MOTD: "Reost"
     tty: true
     stdin_open: true
     restart: unless-stopped
