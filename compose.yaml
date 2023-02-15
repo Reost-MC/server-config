@@ -5,6 +5,7 @@ services:
     image: itzg/minecraft-server
     ports:
       - 25571:25565
+      - 8800:8800
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
