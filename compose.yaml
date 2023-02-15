@@ -13,6 +13,7 @@ services:
       VERSION: "1.19.2"
       MOTD: "Reost Spawn"
       MAX_PLAYERS: "64"
+      LEVEL_NAME: "InselDerZeiten"
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -30,6 +31,7 @@ services:
       VERSION: "1.19.2"
       MOTD: "Reost"
       MAX_PLAYERS: "1024"
+      LEVEL_NAME: "Reost"
     tty: true
     stdin_open: true
     restart: unless-stopped
