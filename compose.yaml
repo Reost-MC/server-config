@@ -24,6 +24,7 @@ services:
     ports:
       - 25572:25565
       - 8123:8123
+      - 8100:8100
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
